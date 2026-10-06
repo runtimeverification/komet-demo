@@ -4,36 +4,40 @@ This repository contains an example project for testing a simple `adder` contrac
 
 ## Project Structure
 
-The project consists of two contracts:
-- `adder`: A simple contract that takes two numbers and returns their sum.
-- `test_adder`: A test contract for the `adder` contract, using Komet for testing and verification.
+The project consists of 5 contracts:
+- `fungible`: A simple fungible token contract.
+- `test_fungible`: A test contract for the `fungible` contract.
+- `test_fungible_invariants`: Another test contract for the `fungible` contract.
+- `test_adder`: A test contract for demonstrating the prover.
+
+
 
 ```text
 .
 ├── contracts
-│   ├── adder
-│   │   ├── src
-│   │   │   └── lib.rs
-│   │   └── Cargo.toml
+│   ├── fungible
+│   ├── test_fungible
+│   ├── test_fungible_invariants
 │   └── test_adder
-│       ├── src
-│       │   ├── lib.rs
-│       │   └── komet.rs
-│       ├── Cargo.toml
-│       └── kasmer.json
 ├── Cargo.toml
 └── README.md
 ```
 
 ## Installation
 
-### Step 1: Install `kup`
+### Step 1: Prerequisites
+
+#### Install `kup`
 
 Komet can be installed using the `kup` package manager. To install `kup`, run the following command:
 
 ```bash
 bash <(curl https://kframework.org/install)
 ```
+
+#### Install `stellar-cli`
+
+Install `stellar-cli` version 26.0.0
 
 ### Step 2: Install Komet
 
@@ -56,17 +60,17 @@ komet --help
 ### Step 1: Build the Contracts
 
 Navigate to the root directory of the project and build the contracts using the following command:
-
+q
 ```bash
 soroban contract build
 ```
 
 ### Step 2: Navigate to the Test Contract Directory
 
-Change directories into the `test_adder` contract folder:
+Change directories into the `test_fungible` contract folder:
 
 ```bash
-cd contracts/test_adder/
+cd contracts/test_fungible/
 ```
 
 ### Step 3: Running Tests
